@@ -46,7 +46,7 @@ Running Job with:
 ## RUN THE SERVICE
 apptainer -v instance run \
     -B "$OSRM_DATA_BASE:/data" \
-    OSRM.sif OSRM-$LOCATION-$PORT \
+    OSRM.sif OSRM-$LOCATION-$PROFILE-$PORT \
     osrm-routed \
     --port $PORT \
     --threads $THREADS \
@@ -72,7 +72,9 @@ while ! $(nc -z localhost $PORT); do
     let CUR_SECONDS++
 done
 echo
-echo "$(date) :: OSRM server is up!"
+echo "$(date) :: OSRM server is up! All instance details:"
+apptainer -v instance list
+echo
 
 ### THE DATA (EXAMPLE)
 #echo "$(date) :: starting R script"
