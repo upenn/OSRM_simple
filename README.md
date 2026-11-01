@@ -3,10 +3,6 @@
 ### Source
 Converted from https://github.com/Project-OSRM/osrm-backend/pkgs/container/osrm-backend
 
-### Prerequisite: GitHub UPenn with SSH Key Authorization
-
-If you don't already have an SSH Key set up for GitHub, and the key associated with your GitHub account, see our [Key Setup](KEY_setup.md) document for detailed instructions.
-
 ### Prerequisite: Apptainer Installed
 
 Please see the [Apptainer - Installing Apptainer](https://apptainer.org/docs/admin/main/installation.html) guide for details. You _do not_ need suid for OSRM, you _do_ need `fuse`.
