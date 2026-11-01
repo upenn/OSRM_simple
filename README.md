@@ -19,7 +19,7 @@ More soon!
 
 ### Clone the Repository
 
-A one-time task,  after which you'll likely *skip to "[do work](#do-work-example)".*.
+A one-time task.
 
 ```
 cd some_path
