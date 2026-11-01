@@ -1,4 +1,4 @@
-## Setup OSRM and Serve Data
+## Setup OSRM and Serve and Query Data
 
 ### Source
 Converted from https://github.com/Project-OSRM/osrm-backend/pkgs/container/osrm-backend
