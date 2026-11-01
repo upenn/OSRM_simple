@@ -16,17 +16,18 @@ setup_dirs () {
 }
 
 setup_pbf () {
+    # $PBF_FILE_URL $DATA_DIR_BASE $PROFILE
     echo -n "$(date) :: check or get $1 ... "
-    if [[ ! -f $2/$PROFILE/$PBF_FILE ]]; then
+    if [[ ! -f $2/pbf_files/$PBF_FILE ]]; then
         echo -n "getting ... "
-        wget -O $2/$PROFILE/$PBF_FILE $1
+        wget -O $2/pbf_files/$PBF_FILE $1
         echo "downloaded"
     else
         echo "exists"
     fi
     if [[ ! -e $2/$3/$PBF_FILE ]]; then
         # need the PBF, but a link is fine
-        ln $2/$PBF_FILE $2/$3/$PBF_FILE
+        ln $2/pbf_files/$PBF_FILE $2/$3/$PBF_FILE
     fi
 }
 
@@ -82,6 +83,7 @@ echo """$(date) :: Starting OSRM Setup with:
 """
 
 echo "$(date) :: Working on LOCATION $LOCATION PROFILE $PROFILE ..."
+setup_dirs $DATA_DIR_BASE/pbf_files
 setup_dirs $DATA_DIR_BASE/$PROFILE
 setup_pbf  $PBF_FILE_URL $DATA_DIR_BASE $PROFILE
 setup_OSRM_sif
